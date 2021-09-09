@@ -42,7 +42,7 @@ class Product(models.Model):
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(1)], default=0)
     availability = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    updated_at = models.DateField()
+    updated_at = models.DateTimeField(auto_now=True)
     featured = models.BooleanField(default=False)
     image1 = models.ImageField(default='default.jpg', upload_to=upload_product_image_path)
     image2 = models.ImageField(default='default.jpg',upload_to=upload_product_image_path, null=True, blank=True)
@@ -52,3 +52,16 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Ratings(models.Model):
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    subject = models.CharField(max_length=50,blank=True)
+    comment = models.CharField(max_length=250,blank=True)
+    rate = models.IntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.user.username + " " + self.product.name

@@ -96,15 +96,17 @@
                                             <li><a href="{% url 'Home:home' %}">Home</a>
 
                                             </li>
-                                            <li><a href="shop.html">Shop</a>
+                                            <li><a href="{% url 'Products:product_list' %}">Shop</a>
                                                 <div class="magamenu ">
                                                     <ul class="again">
                                                         <li class="single-menu colmd4">
                                                             <span>men’s wear</span>
-                                                            <a href="#">shirts & top</a>
-                                                            <a href="#">shoes</a>
-                                                            <a href="#">dresses</a>
-                                                            <a href="#">shwmwear</a>
+                                                            <a href="#">Monsoon</a>
+                                                            <a href="{% url 'Products:summer' %}">Summer</a>
+                                                            <a href="{% url 'Products:winter' %}">Winter</a>
+                                                            <a href="{% url 'Products:Male' %}">Male</a>
+                                                            <a href="{% url 'Products:Female' %}">Female</a>
+
                                                         </li>
                                                         <li class="single-menu colmd4">
                                                             <span>women’s wear</span>
@@ -129,7 +131,7 @@
                                                 </div>
                                             </li>
                                             <li><a href="shop.html">Lookbook</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="{% url 'Products:products' %}">Create Product</a></li>
                                             <li><a href="#">Pages</a>
                                                 <ul>
                                                     <li><a href="about-us.html">About</a></li>
@@ -139,7 +141,7 @@
                                                     <li><a href="#">Contact</a></li>
                                                     <li><a href="login.html">Login</a></li>
                                                     <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="shop.html">shop</a></li>
+                                                    <li><a href="{% url 'Products:product_list' %}">shop</a></li>
                                                     <li><a href="shop-list.html">Shop List</a></li>
                                                     <li><a href="shopping-cart.html">Shopping-Cart</a></li>
                                                     <li><a href="single-product.html">Single Product</a></li>
@@ -162,15 +164,15 @@
                                                         <li><a href="index-2.html">Home Version Two</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="shop.html">Shop</a>
+                                                <li><a href="{% url 'Products:product_list' %}">Shop</a>
                                                     <ul>
                                                         <li><a href="#">all products</a>
                                                             <ul>
                                                                 <li>
                                                                     <span>men’s wear</span>
-                                                                    <a href="#">shirts & top</a>
-                                                                    <a href="#">shoes</a>
-                                                                    <a href="#">dresses</a>
+                                                                    <a href="#">Monsoon</a>
+                                                                    <a href="#">Winter</a>
+                                                                    <a href="#">Summers</a>
                                                                     <a href="#">shwmwear</a>
                                                                     <a href="#">jeans</a>
                                                                     <a href="#">sweaters</a>
@@ -339,8 +341,9 @@
                                 <div class="right-header re-right-header">
                                     <ul>
                                         <li class="re-icon tnm"><i class="fa fa-search" aria-hidden="true"></i>
-                                            <form method="get" id="searchform" action="#">
-                                                <input type="text" value="" name="search" id="ws" placeholder="Search product..." />
+                                            <form method="get" id="searchform" action="{% url 'Products:search' %}">
+                                                <input type="text" value="" name="name"  placeholder="Search product..." />
+                                                <input type="number" value="" name="price"  placeholder="MaxPrice" />
                                                 <button type="submit"><i class="pe-7s-search"></i></button>
                                             </form>
                                         </li>

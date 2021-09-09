@@ -63,7 +63,7 @@
 																	<a href="{% url 'Products:singleproduct' product.id %}" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye"></i></a>
 																</div>
 																<a href="{% url 'Products:update_products' product.id %}" class="btn btn-success">Update</a>
-																<a href="" class="btn btn-danger">Delete</a>
+																<a href="{% url 'Products:delete_product' product.id %}" class="btn btn-danger">Delete</a>
 
 															</div>
 														</div>

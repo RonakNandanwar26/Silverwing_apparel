@@ -1,0 +1,63 @@
+{% extends 'common.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} apparel || login {% endblock %}
+{% block content %}
+        <!-- pages-title-start -->
+		<section class="contact-img-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="con-text">
+                            <h2 class="page-title">Vendor Login</h2>
+                            <p><a href="#">Home</a> | Login</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<!-- pages-title-end -->
+		<!-- login content section start -->
+		<div class="login-area" style="margin-bottom: 100px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-push-3 col-xs-6">
+                        <div class="tb-login-form ">
+                            <h5 class="tb-title">Login</h5>
+                            <div class="tb-social-login">
+                                <a class="tb-facebook-login" href="#">
+                                    <i class="fa fa-facebook"></i>
+                                    Sign In With Facebook
+                                </a>
+                                <a class="tb-twitter-login res" href="#">
+                                    <i class="fa fa-twitter"></i>
+                                    Sign In With Twitter
+                                </a>
+                            </div>
+                            <form id="login_form" class="login" method="post" > {% csrf_token %}
+                                <p class="checkout-coupon top log a-an">
+                                    <label class="l-contact">
+                                        Username
+                                        <em>*</em>
+                                    </label>
+                                    <input type="text" name="username" placeholder="Username">
+                                </p>
+                                <p class="checkout-coupon top-down log a-an">
+                                    <label class="l-contact">
+                                        Password
+                                        <em>*</em>
+                                    </label>
+                                    <input type="password" name="password" placeholder="Password">
+                                </p>
+                                <a href="#">Forgot Password?</a>
+                                <p class="login-submit5">
+                                    <input class="button-primary" type="submit" value="login">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

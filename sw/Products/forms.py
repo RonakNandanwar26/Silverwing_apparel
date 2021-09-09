@@ -1,10 +1,10 @@
 from django import forms
-from .models import Product,Category
+from .models import Product,Category,Ratings
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name','description','category','gender','price','quantity','availability','featured','image1','image2','image3','image4','video1','updated_at']
+        fields = ['name','description','category','gender','price','quantity','availability','featured','image1','image2','image3','image4','video1']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
@@ -12,7 +12,7 @@ class ProductForm(forms.ModelForm):
             'gender': forms.Select(attrs={'class': 'form-control'}),
             'price': forms.NumberInput(attrs={'class': 'form-control'}),
             'quantity': forms.NumberInput(attrs={'class': 'form-control'}),
-            'updated_at' : forms.DateInput(format='%d/%m/%Y')
+
         }
 
 
@@ -23,3 +23,9 @@ class Category_Form(forms.ModelForm):
         widgets = {
             "name" : forms.TextInput(attrs={'class':'form-control'})
         }
+
+
+class Rating_Form(forms.ModelForm):
+    class Meta:
+        model = Ratings
+        fields = ['subject','comment','rate']

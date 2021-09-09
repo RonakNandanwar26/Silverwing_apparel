@@ -1,0 +1,29 @@
+{% extends 'common.html' %}
+{% load account %}
+
+{% block content %}
+
+    <section class="contact-img-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="con-text">
+                            <h2 class="page-title">Delete Product</h2>
+                            <p><a href="#">Products</a> | Delete Product</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<center style="margin-top: 100px;"><h3 style="margin-bottom: 25px">Are you sure you want to Delete Product? </h3></center>
+
+<form method="post">
+  {% csrf_token %}
+
+    <center>
+  <input type="submit" class="btn btn-danger" style="margin-bottom: 100px">
+    </center>
+</form>
+
+{% endblock %}
